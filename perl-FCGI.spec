@@ -2,25 +2,30 @@
 Summary:	FCGI perl module
 Summary(pl):	Modu³ perla FCGI
 Name:		perl-FCGI
-Version:	0.58
-Release:	5
-License:	GPL
+Version:	0.65
+Release:	1
+License:	BSD-like
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/FCGI/FCGI-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
-BuildRequires:	perl >= 5.6.1
+Source1:	%{name}-acinclude.m4
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	perl >= 5.6.1
+BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-FCGI - Fast CGI module.
+This is a FastCGI module for perl. It's based on the FCGI module
+that comes with Open Market's FastCGI Developer's Kit, but does
+not require you to recompile perl.
 
 %description -l pl
-FCGI - szybki modu³ CGI.
+To jest modu³ FastCGI. Jest bazowany na module FCGI dostarczanym
+z FastCGI Developer's Kit, ale nie wymaga rekompilacji perla.
 
 %prep
 %setup -q -n FCGI-%{version}
+cp -f %{SOURCE1} acinclude.m4
 
 %build
 aclocal
@@ -34,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf ChangeLog README
+gzip -9nf ChangeLog LICENSE.TERMS README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
