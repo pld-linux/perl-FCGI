@@ -3,7 +3,7 @@ Summary:	FCGI perl module
 Summary(pl):	Modu³ perla FCGI
 Name:		perl-FCGI
 Version:	0.58
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
@@ -23,7 +23,9 @@ FCGI - szybki modu³ CGI.
 %setup -q -n FCGI-%{version}
 
 %build
-%configure2_13
+aclocal
+autoconf
+%configure
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 
