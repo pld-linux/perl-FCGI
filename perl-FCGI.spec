@@ -23,7 +23,7 @@ FCGI - szybki modu³ CGI.
 %setup -q -n FCGI-%{version}
 
 %build
-%configure
+%configure2_13
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 
