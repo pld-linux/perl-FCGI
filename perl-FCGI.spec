@@ -7,6 +7,7 @@ Release:	2
 License:	BSD-like
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/FCGI/FCGI-%{version}.tar.gz
+# Source0-md5:	2e9b5bd1f74290fd9788555e8108a3d2
 Source1:	%{name}-acinclude.m4
 URL:		http://www.fastcgi.com/
 BuildRequires:	autoconf
