@@ -6,7 +6,7 @@ Version:	0.67
 Release:	1
 License:	BSD-like
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/FCGI/FCGI-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/FCGI/FCGI-%{version}.tar.gz
 Source1:	%{name}-acinclude.m4
 URL:		http://www.fastcgi.com/
 BuildRequires:	autoconf
