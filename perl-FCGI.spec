@@ -2,12 +2,13 @@
 Summary:	FCGI perl module
 Summary(pl):	Modu³ perla FCGI
 Name:		perl-FCGI
-Version:	0.65
+Version:	0.66
 Release:	1
 License:	BSD-like
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/FCGI/FCGI-%{version}.tar.gz
 Source1:	%{name}-acinclude.m4
+URL:		http://www.fastcgi.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	perl >= 5.6.1
@@ -39,14 +40,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf ChangeLog LICENSE.TERMS README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz echo.fpl
+%doc Change* LICENSE.TERMS README echo.fpl
 %{perl_sitearch}/FCGI.pm
 %dir %{perl_sitearch}/auto/FCGI
 %{perl_sitearch}/auto/FCGI/FCGI.bs
