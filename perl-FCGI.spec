@@ -29,7 +29,7 @@ z FastCGI Developer's Kit, ale nie wymaga rekompilacji perla.
 cp -f %{SOURCE1} acinclude.m4
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 perl Makefile.PL
