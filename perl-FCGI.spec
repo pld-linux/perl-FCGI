@@ -32,7 +32,7 @@ cp -f %{SOURCE1} acinclude.m4
 %{__aclocal}
 %{__autoconf}
 %configure
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %install
