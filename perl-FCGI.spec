@@ -12,7 +12,7 @@ URL:		http://www.fastcgi.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	perl >= 5.6.1
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
