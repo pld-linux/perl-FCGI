@@ -34,7 +34,7 @@ cp -f %{SOURCE1} acinclude.m4
 %{__autoconf}
 %configure
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %install
