@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	FCGI perl module
-Summary(pl):	Modu³ perla FCGI
+Summary:	FCGI - Fast CGI module
+Summary(pl):	FCGI - szybki modu³ CGI
 Name:		perl-FCGI
 Version:	0.67
 Release:	2
