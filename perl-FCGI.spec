@@ -27,7 +27,7 @@ not require you to recompile perl.
 
 %description -l pl
 To jest modu³ FastCGI. Jest bazowany na module FCGI dostarczanym
-z FastCGI Developer's Kit, ale nie wymaga rekompilacji perla.
+z FastCGI Developer's Kit, ale nie wymaga rekompilacji Perla.
 
 %prep
 %setup -q -n FCGI-%{version}
