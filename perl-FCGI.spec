@@ -3,7 +3,7 @@ Summary:	FCGI perl module
 Summary(pl):	Modu³ perla FCGI
 Name:		perl-FCGI
 Version:	0.58
-Release:	4
+Release:	5
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/FCGI/FCGI-%{version}.tar.gz
