@@ -2,13 +2,13 @@
 Summary:	FCGI perl module
 Summary(pl):	Modu³ perla FCGI
 Name:		perl-FCGI
-Version:	0.45
-Release:	4
+Version:	0.58
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module//FCGI-%{version}.tar.gz
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/FCGI/FCGI-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 %requires_eq	perl
