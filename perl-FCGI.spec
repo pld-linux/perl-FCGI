@@ -8,7 +8,7 @@ Summary:	FCGI - Fast CGI module
 Summary(pl):	FCGI - szybki modu³ CGI
 Name:		perl-FCGI
 Version:	0.67
-Release:	3.1
+Release:	4
 License:	BSD-like
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/FCGI-%{version}.tar.gz
@@ -68,4 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/auto/FCGI/FCGI.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/FCGI/FCGI.so
 %{_mandir}/man3/*
-%{_examplesdir}/%{name}-%{version}
+%dir %{_examplesdir}/%{name}-%{version}
+%attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.fpl
