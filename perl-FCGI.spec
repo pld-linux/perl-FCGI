@@ -3,14 +3,15 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
+%define	pdir	FCGI
 Summary:	FCGI - Fast CGI module
 Summary(pl):	FCGI - szybki modu³ CGI
 Name:		perl-FCGI
 Version:	0.67
-Release:	3
+Release:	3.1
 License:	BSD-like
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/FCGI/FCGI-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/FCGI-%{version}.tar.gz
 # Source0-md5:	2e9b5bd1f74290fd9788555e8108a3d2
 Source1:	%{name}-acinclude.m4
 URL:		http://www.fastcgi.com/
@@ -21,16 +22,16 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is a FastCGI module for perl. It's based on the FCGI module
-that comes with Open Market's FastCGI Developer's Kit, but does
-not require you to recompile perl.
+This is a FastCGI module for perl. It's based on the FCGI module that
+comes with Open Market's FastCGI Developer's Kit, but does not require
+you to recompile perl.
 
 %description -l pl
-To jest modu³ FastCGI. Jest bazowany na module FCGI dostarczanym
-z FastCGI Developer's Kit, ale nie wymaga rekompilacji Perla.
+To jest modu³ FastCGI. Jest bazowany na module FCGI dostarczanym z
+FastCGI Developer's Kit, ale nie wymaga rekompilacji Perla.
 
 %prep
-%setup -q -n FCGI-%{version}
+%setup -q -n %{pdir}-%{version}
 cp -f %{SOURCE1} acinclude.m4
 
 %build
@@ -46,18 +47,25 @@ cp -f %{SOURCE1} acinclude.m4
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install *.fpl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+rm -f $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/%{pdir}/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Change* LICENSE.TERMS README echo.fpl
+%doc Change* LICENSE.TERMS README
 %{perl_vendorarch}/FCGI.pm
 %dir %{perl_vendorarch}/auto/FCGI
 %{perl_vendorarch}/auto/FCGI/FCGI.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/FCGI/FCGI.so
 %{_mandir}/man3/*
+%{_examplesdir}/%{name}-%{version}
