@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	FCGI
 Summary:	FCGI - Fast CGI module
-Summary(pl.UTF-8):   FCGI - szybki moduł CGI
+Summary(pl.UTF-8):	FCGI - szybki moduł CGI
 Name:		perl-FCGI
 Version:	0.67
 Release:	4
