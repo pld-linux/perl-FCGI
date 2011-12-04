@@ -7,14 +7,14 @@
 Summary:	FCGI - Fast CGI module
 Summary(pl.UTF-8):	FCGI - szybki moduł CGI
 Name:		perl-FCGI
-Version:	0.73
+Version:	0.74
 Release:	1
 License:	BSD-like
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/FCGI-%{version}.tar.gz
-# Source0-md5:	b55c8b93ccd175b3c0e4473f1a6c0bdd
+Source0:	http://www.cpan.org/modules/by-module/FCGI/FCGI-%{version}.tar.gz
+# Source0-md5:	462a77a0072480fea791a4d3095eb486
 Source1:	%{name}-acinclude.m4
-URL:		http://www.fastcgi.com/
+URL:		http://search.cpan.org/dist/FCGI/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -50,13 +50,10 @@ cp -f %{SOURCE1} acinclude.m4
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install *.fpl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-
-rm -f $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/%{pdir}/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,6 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/FCGI
 %{perl_vendorarch}/auto/FCGI/FCGI.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/FCGI/FCGI.so
-%{_mandir}/man3/*
+%{_mandir}/man3/FCGI.3pm*
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.fpl
