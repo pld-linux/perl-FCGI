@@ -8,12 +8,13 @@ Summary:	FCGI - Fast CGI module
 Summary(pl.UTF-8):	FCGI - szybki moduł CGI
 Name:		perl-FCGI
 Version:	0.74
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/FCGI/FCGI-%{version}.tar.gz
 # Source0-md5:	462a77a0072480fea791a4d3095eb486
 Source1:	%{name}-acinclude.m4
+Patch0:		am.patch
 URL:		http://search.cpan.org/dist/FCGI/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -32,6 +33,7 @@ FastCGI Developer's Kit, ale nie wymaga rekompilacji Perla.
 
 %prep
 %setup -q -n %{pdir}-%{version}
+%patch0 -p1
 cp -f %{SOURCE1} acinclude.m4
 
 %build
