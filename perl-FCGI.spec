@@ -65,7 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc Change* LICENSE.TERMS README
 %{perl_vendorarch}/FCGI.pm
 %dir %{perl_vendorarch}/auto/FCGI
-%{perl_vendorarch}/auto/FCGI/FCGI.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/FCGI/FCGI.so
 %{_mandir}/man3/FCGI.3pm*
 %dir %{_examplesdir}/%{name}-%{version}
