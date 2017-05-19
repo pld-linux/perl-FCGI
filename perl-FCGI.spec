@@ -7,12 +7,12 @@
 Summary:	FCGI - Fast CGI module
 Summary(pl.UTF-8):	FCGI - szybki moduł CGI
 Name:		perl-FCGI
-Version:	0.77
-Release:	4
+Version:	0.78
+Release:	1
 License:	BSD-like
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/FCGI/FCGI-%{version}.tar.gz
-# Source0-md5:	8d88f0fe90f05973522813263b0be39b
+# Source0-md5:	916cd2887b27265cd8dcfd3280135270
 Source1:	%{name}-acinclude.m4
 Patch0:		am.patch
 URL:		http://search.cpan.org/dist/FCGI/
@@ -62,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Change* LICENSE.TERMS README
+%doc Change* README
 %{perl_vendorarch}/FCGI.pm
 %dir %{perl_vendorarch}/auto/FCGI
 %attr(755,root,root) %{perl_vendorarch}/auto/FCGI/FCGI.so
