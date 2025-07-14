@@ -38,7 +38,7 @@ FastCGI Developer's Kit, ale nie wymaga rekompilacji Perla.
 
 %prep
 %setup -q -n %{pdir}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 cp -f %{SOURCE1} acinclude.m4
 
 %build
